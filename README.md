@@ -19,17 +19,17 @@ Below command will generate a `service.pb.go` file
 docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc --proto_path=/repo/ --proto_path=/opt/protobuf/include --go_out=plugins=grpc:/repo/golang/proto service.proto 
 ```
 
-Below command will generate a `data_pb2.py` file
+Below command will generate a `service_pb2.py` file
 ```
-docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc -I=/repo --python_out=/repo/python /repo/data.proto
-```
-
-Below command will generate a `person.py` file
-```
-docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc -I=/repo --js_out=/repo/nodejs /repo/data.proto
+docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc --proto_path=/repo/ --proto_path=/opt/protobuf/include --python_out=/repo/python/ service.proto
 ```
 
-Below command will generate a `data.pb.cc` and `data.pb.h` files
+Below command will generate a `request.js` and `response.js` file
 ```
-docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc -I=/repo --cpp_out=/repo/cpp /repo/data.proto
+docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc --proto_path=/repo/ --proto_path=/opt/protobuf/include --js_out=/repo/nodejs/ service.proto 
+```
+
+Below command will generate a `service.pb.cc` and `service.pb.h` files
+```
+docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc --proto_path=/repo/ --proto_path=/opt/protobuf/include --cpp_out=/repo/cpp/ service.proto
 ```
