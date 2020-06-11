@@ -23,6 +23,7 @@ Below command will generate a `data_pb2.py` file
 ```
 docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc -I=/repo --python_out=/repo/python /repo/data.proto
 ```
+
 Below command will generate a `person.py` file
 ```
 docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc -I=/repo --js_out=/repo/nodejs /repo/data.proto
