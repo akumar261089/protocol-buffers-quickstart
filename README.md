@@ -14,9 +14,9 @@ To convert your data/message in this format we have to follow below steps
 
 ## Generate your proto code for different languages with single container
 
-Below command will generate a `data.pb.go` file
+Below command will generate a `service.pb.go` file
 ```
-docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc -I=/repo --go_out=/repo/ /repo/data.proto
+docker run -it -v ${PWD}:/repo akumar261089/protoc-builder:latest protoc --proto_path=/repo/ --proto_path=/opt/protobuf/include --go_out=plugins=grpc:/repo/golang/proto service.proto 
 ```
 
 Below command will generate a `data_pb2.py` file
